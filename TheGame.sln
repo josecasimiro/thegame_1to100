@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGame.Domain", "TheGame.Domain\TheGame.Domain.csproj", "{8AAA8224-09F8-4ADF-9C56-CC64F2191081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGame.Domain.Test", "TheGame.Domain.Test\TheGame.Domain.Test.csproj", "{0F58C96E-69BE-434D-B0CC-043CB619BF09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AAA8224-09F8-4ADF-9C56-CC64F2191081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAA8224-09F8-4ADF-9C56-CC64F2191081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAA8224-09F8-4ADF-9C56-CC64F2191081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAA8224-09F8-4ADF-9C56-CC64F2191081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F58C96E-69BE-434D-B0CC-043CB619BF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F58C96E-69BE-434D-B0CC-043CB619BF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F58C96E-69BE-434D-B0CC-043CB619BF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F58C96E-69BE-434D-B0CC-043CB619BF09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CD3AB1C-FAF8-4873-9BA9-2329DD6C4AA5}
+	EndGlobalSection
+EndGlobal
