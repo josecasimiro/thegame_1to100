@@ -48,11 +48,7 @@ namespace TheGame.UI.Console
 
           if (IsCorrectGuess(userInput, currentNumber, generatedNumber))
           {
-            System.Console.WriteLine($"You were correct! You have been awarded {GameConfiguration.ScorePerCorrectGuess} points!");
             score += GameConfiguration.ScorePerCorrectGuess;
-
-            System.Console.WriteLine($"Press any key to continue to the next round.");
-            System.Console.ReadLine();
           }
           else
           {
@@ -72,9 +68,12 @@ namespace TheGame.UI.Console
           System.Console.Clear();
         }
 
-        var nickname = ReadUserNickname();
-        leaderboardRepository.SaveScore(nickname, score, stopwatch.ElapsedMilliseconds);
-        WriteLeaderboard(leaderboardRepository.GetTopScores(GameConfiguration.MaximumTopScoresToShow));
+        if (score > 0)
+        {
+          var nickname = ReadUserNickname();
+          leaderboardRepository.SaveScore(nickname, score, stopwatch.ElapsedMilliseconds);
+          WriteLeaderboard(leaderboardRepository.GetTopScores(GameConfiguration.MaximumTopScoresToShow));
+        }
 
       } while (ReadUserPlayAgain());
     }
@@ -108,7 +107,7 @@ namespace TheGame.UI.Console
         userInput = userInput.Substring(0, GameConfiguration.MaximumNicknameLength);
       }
 
-      return userInput;
+      return userInput.ToUpper();
     }
 
     private static bool ReadUserPlayAgain()
@@ -131,9 +130,9 @@ namespace TheGame.UI.Console
       do
       {
         System.Console.WriteLine($"Will the next one be over or under? Choose now:");
-        System.Console.WriteLine($"o) Over");
-        System.Console.WriteLine($"u) Under");
-        System.Console.WriteLine($"x) Surrender (ends the game)");
+        System.Console.WriteLine($"O) Over");
+        System.Console.WriteLine($"U) Under");
+        System.Console.WriteLine($"X) Surrender (ends the game)");
         System.Console.WriteLine();
 
         userInput = System.Console.ReadLine();
