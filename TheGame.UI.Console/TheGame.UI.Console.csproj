@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8AAA8224-09F8-4ADF-9C56-CC64F2191081}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheGame.Domain</RootNamespace>
-    <AssemblyName>TheGame.Domain</AssemblyName>
+    <ProjectGuid>{5764B7B7-2DF3-4EDF-9975-D3B548160C55}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TheGame.UI.Console</RootNamespace>
+    <AssemblyName>TheGame.UI.Console</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,12 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\PlayerScore.cs" />
-    <Compile Include="Leaderboard\ILeaderboardRepository.cs" />
-    <Compile Include="NumberGenerator\INumberGenerator.cs" />
-    <Compile Include="NumberGenerator\RandomNumberGenerator.cs" />
+    <Compile Include="GameConfiguration.cs" />
+    <Compile Include="UserInputs.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheGame.Domain\TheGame.Domain.csproj">
+      <Project>{8aaa8224-09f8-4adf-9c56-cc64f2191081}</Project>
+      <Name>TheGame.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheGame.Infrastructure.FileSystem\TheGame.Infrastructure.FileSystem.csproj">
+      <Project>{6be2b86e-00b6-474e-b72c-bf8b39c80c6f}</Project>
+      <Name>TheGame.Infrastructure.FileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

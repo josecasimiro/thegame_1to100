@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8AAA8224-09F8-4ADF-9C56-CC64F2191081}</ProjectGuid>
+    <ProjectGuid>{6BE2B86E-00B6-474E-B72C-BF8B39C80C6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheGame.Domain</RootNamespace>
-    <AssemblyName>TheGame.Domain</AssemblyName>
+    <RootNamespace>TheGame.Infrastructure.FileSystem</RootNamespace>
+    <AssemblyName>TheGame.Infrastructure.FileSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\PlayerScore.cs" />
-    <Compile Include="Leaderboard\ILeaderboardRepository.cs" />
-    <Compile Include="NumberGenerator\INumberGenerator.cs" />
-    <Compile Include="NumberGenerator\RandomNumberGenerator.cs" />
+    <Compile Include="FileSystemLeaderBoardRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TheGame.Domain\TheGame.Domain.csproj">
+      <Project>{8aaa8224-09f8-4adf-9c56-cc64f2191081}</Project>
+      <Name>TheGame.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
